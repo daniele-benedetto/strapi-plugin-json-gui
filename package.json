@@ -1,11 +1,22 @@
 {
-  "name": "json-gui",
-  "version": "0.0.0",
-  "description": "This is the description of the plugin.",
+  "name": "strapi-plugin-json-gui",
+  "version": "1.0.0",
+  "description": "Strapi plugin to create a json graphical user interface",
+  "keywords": [
+    "strapi",
+    "strapi-plugin",
+    "custom-fields",
+    "json",
+    "json-gui"
+  ],
   "strapi": {
-    "name": "json-gui",
-    "description": "Description of json-gui plugin",
+    "name": "strapi-plugin-json-gui",
+    "description": "Strapi plugin to create a json graphical user interface",
     "kind": "plugin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daniele-benedetto/strapi-plugin-json-gui.git"
   },
   "dependencies": {
     "@strapi/design-system": "^1.6.3",
@@ -29,14 +40,19 @@
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0",
     "react-router-dom": "^5.2.0",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "@strapi/strapi": "^4.0.0"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Daniele Benedetto",
+    "email": "daniele.benedetto@outlook.it",
+    "url": "https://github.com/daniele-benedetto/"
   },
   "maintainers": [
     {
-      "name": "A Strapi developer"
+      "name": "Daniele Benedetto",
+      "email": "daniele.benedetto@outlook.it",
+      "url": "https://github.com/daniele-benedetto/"
     }
   ],
   "engines": {
