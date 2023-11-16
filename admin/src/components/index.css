@@ -1,0 +1,51 @@
+.cursorPointer {
+    cursor: pointer;
+}
+
+.marginBottom5 {
+    margin-bottom: 5px;
+}
+
+.marginBottom10 {
+    margin-bottom: 10px;
+}
+
+.marginRight10 {
+    margin-right: 10px;
+}
+
+.borderRadius0 {
+    border-radius: 0;
+}
+
+.minHeight80 {
+    min-height: 80px;
+}
+
+.minHeight150 {
+    min-height: 150px;
+}
+
+.positionRelative {
+    position: relative;
+}
+
+.positionAbsolute {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.fillWhite > svg > path {
+    fill: white;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+}
+
+.badge {
+    width: 35px;
+    height: 30px;
+}
