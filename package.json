@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-json-gui",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Strapi plugin to create a json graphical user interface",
   "keywords": [
     "strapi",

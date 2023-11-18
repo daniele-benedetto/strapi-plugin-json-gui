@@ -24,9 +24,23 @@ yarn build
 npm run build
 ```
 
+## Configuration
+
+After installation you need enable the plugin in your `./config/plugins.js` file:
+
+```js
+module.exports = ({ env }) => ({
+  // ...
+  'json-gui': {
+    enabled: true,
+  },
+  // ...
+});
+```
+
 ## Usage
 
-After installation you will find a new field type in the content type builder.
+After installation and configuration you will find a new field type in the content type builder.
 
 ![json-gui screenshot](./screenshots/strapi-plugin-json-gui.png)
 
@@ -45,7 +59,7 @@ in this case the API will return
         "menu": [
           {
               "title": "Home",
-              "url": "/"
+              "url": "/home"
           },
           {
               "title": "About",
