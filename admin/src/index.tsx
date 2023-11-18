@@ -10,16 +10,16 @@ const name = pluginPkg.strapi.name;
 export default {
   register(app: any) {
     app.customFields.register({
-      name: 'json-gui',
-      pluginId: 'json-gui',
+      name: 'strapi-plugin-json-gui',
+      pluginId: 'strapi-plugin-json-gui',
       type: 'json',
       icon: JsonGuiIcon,
       intlLabel: {
-        id: getTrad('json-gui.label'),
+        id: getTrad('strapi-plugin-json-gui.label'),
         defaultMessage: 'JsonGui',
       },
       intlDescription: {
-        id: getTrad('json-gui.description'),
+        id: getTrad('strapi-plugin-json-gui.description'),
         defaultMessage: "Json Gui for building complex json objects",
       },
       components: {

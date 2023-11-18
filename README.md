@@ -8,10 +8,10 @@ To install this plugin, you need to add an NPM dependency to your Strapi applica
 
 ```
 # Using Yarn
-yarn add @daniele-benedetto/strapi-plugin-json-gui
+yarn add strapi-plugin-json-gui
 
 # Or using NPM
-npm i @daniele-benedetto/strapi-plugin-json-gui
+npm i strapi-plugin-json-gui
 ```
 
 Then, you'll need to build your admin panel:
