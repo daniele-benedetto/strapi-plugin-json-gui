@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-json-gui",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Strapi plugin to create a json graphical user interface",
   "keywords": [
     "strapi",
@@ -37,11 +37,11 @@
     "typescript": "5.0.4"
   },
   "peerDependencies": {
+    "@strapi/strapi": "^4.0.0",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0",
     "react-router-dom": "^5.2.0",
-    "styled-components": "^5.2.1",
-    "@strapi/strapi": "^4.0.0"
+    "styled-components": "^5.2.1"
   },
   "author": {
     "name": "Daniele Benedetto",

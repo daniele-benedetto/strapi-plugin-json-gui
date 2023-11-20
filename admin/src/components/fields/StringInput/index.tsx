@@ -3,14 +3,15 @@ import React from 'react'
 import { TextInput } from '@strapi/design-system';
 
 type Props = {
-    name: string,
-    value: string,
-    placeholder?: string,
-    label?: string,
-    labelAction?: string,
+    name: string
+    value: string
+    placeholder?: string
+    label?: string
+    labelAction?: string
     onChange?: (value:string, key:string, path: string[], type: string) => void
-    path?:string[],
+    path?:string[]
     keyOfValue?: string
+    json?: any
 }
 
 const StringInput = ({
@@ -21,17 +22,17 @@ const StringInput = ({
     labelAction,
     onChange,
     path = [],
-    keyOfValue
+    keyOfValue = "",
+    json
 }: Props) => {
     return (
         <>
         <TextInput
-            onChange={onChange && keyOfValue
-                ? (e:any) => onChange(e.target.value, keyOfValue, path, 'string') 
-                : onChange && !keyOfValue
-                ? (e:any) => onChange(e.target.value, "", path, 'string')
-                : null
-            }
+            onChange={(e:any) => {
+                if(onChange) {
+                    onChange(e.target.value, keyOfValue, path, 'string');  
+                }
+            }}
             placeholder={placeholder}
             label={label}
             name={name}

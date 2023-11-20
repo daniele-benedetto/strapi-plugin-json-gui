@@ -65,3 +65,14 @@ export const checkDuplicateKey = (json:any, value:string, path:string[]) => {
 
     return currentRef.hasOwnProperty(value); 
 };
+
+
+/**
+ * Generates a unique key based on the specified value.
+ * 
+ * @param {string} value - The value to be used to generate a unique key.
+ * @returns {string} - The generated key.
+ */
+export const generateKey = (value:string) => {
+    return `${value}_${ new Date().getTime() }`;
+}

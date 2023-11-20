@@ -9,7 +9,6 @@ import SelectInput from '../../fields/SelectInput';
 type Props = {
     margin?: number;
     item: string;
-    type: string;
     value: any;
     path: string[];
     isArray?: boolean;
@@ -24,7 +23,6 @@ type Props = {
 const ObjectRow = ({
     margin = 0,
     item,
-    type,
     value,
     path = [],
     deleteElement,

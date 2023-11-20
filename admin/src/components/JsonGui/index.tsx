@@ -55,7 +55,7 @@ const JsonGui = ({
 
     const fieldError = useMemo(() => {
         return error || (required && !possibleOptions.length ? 'No options' : null)
-    }, [required, error, possibleOptions])
+    }, [required, error, possibleOptions]);
 
     /**
      * Handles the addition of elements to the JSON structure based on a specified type.
@@ -135,48 +135,47 @@ const JsonGui = ({
      * @param {string} type - The type of modification (not explicitly used in the function body).
      */
     const editJSONValue = (value:string, key:string, path:string[], type:string) => {
+        // Log the current state of the JSON object.
+        console.log(json);
+    
         // Create a copy of the JSON object to modify.
         let updatedObject = { ...json };
-
+    
         // If the path is empty, modify the key at the top level of the object.
         if (path.length === 0) {
             if (updatedObject.hasOwnProperty(key)) {
-                if(type === 'boolean') {
-                    updatedObject[key] = value === 'true' ? true : false;
-                } else {
-                    updatedObject[key] = value;
-                }
+                // Update only the key, creating a new copy of the object.
+                updatedObject = { ...updatedObject, [key]: type === 'boolean' ? value === 'true' : value };
                 setJson(updatedObject);
             } else {
                 // Display an error if the key does not exist at the top level.
                 getAlert(
                     'Error',
                     'danger',
-                    "The key does not exist at the top level of the object." 
+                    "The key does not exist at the top level of the object."
                 );
             }
         } else {
             // Modify the value at the specified path.
-            let current = updatedObject;
-
             for (let i = 0; i < path.length; i++) {
                 // Create objects along the path if they do not exist.
-                if (!current.hasOwnProperty(path[i])) {
-                    current[path[i]] = {};
+                if (!updatedObject.hasOwnProperty(path[i])) {
+                    updatedObject[path[i]] = {};
                 }
-
+    
                 if (i === path.length - 1) {
                     // Update the value of the key at the specified path.
-                    current[path[i]][key] = value;
+                    //updatedObject[path[i]][key] = value;
+                    updatedObject[path[i]] = { ...updatedObject[path[i]], [key]: value };
                     setJson(updatedObject);
                 } else {
                     // Traverse further along the path.
-                    current = current[path[i]];
+                    updatedObject = updatedObject[path[i]];
                 }
             }
         }
     };
-
+    
     /**
      * Modifies or renames a specific key within a JSON object or array at the provided path.
      * If the new key name is the same as an existing key or if a duplicate key is found,
@@ -201,7 +200,6 @@ const JsonGui = ({
         }
         
         if (path.length === 0) {
-            console.log('ieoeoe')
             if (updatedObject.hasOwnProperty(key) && key !== value) {
                 const updatedKeys = { ...updatedObject };
                 const index = Object.keys(updatedKeys).indexOf(key);
@@ -364,7 +362,6 @@ const JsonGui = ({
      * @param {string} type - The type of the element to be cloned.
      */
     const cloneJSONElement = (key:string, path:string[], type:string) => {
-        console.log(key, path, type)
         const updatedObject = { ...json };
         let current = updatedObject;
         let cloned = false;

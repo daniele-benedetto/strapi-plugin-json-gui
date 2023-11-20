@@ -4,7 +4,7 @@ import { Divider } from '@strapi/design-system';
 
 import ObjectRow from '../rows/ObjectRow';
 import OtherRow from '../rows/OtherRow';
-
+ 
 type Props = {
     json: any;
     path?: string[];
@@ -58,7 +58,6 @@ const JsonGuiGenerator = ({
                                     value={json[itemKey]}
                                     item={itemKey}
                                     margin={marginLeftStyle}
-                                    type={typeof json[itemKey]}
                                     editType={editType}
                                 />
                                 <Divider />
